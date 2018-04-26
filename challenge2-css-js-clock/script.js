@@ -11,12 +11,12 @@ function setDate() {
 
     //minutes
     const minutes = now.getMinutes();
-    const minuteDegrees = minutes / 60 * 360 + 90;
+    const minuteDegrees = minutes / 60 * 360 + seconds / 60 * 6 + 90;
     minHand.style.transform = `rotate(${minuteDegrees}deg)`;
 
     //hours
     const hour = now.getHours();
-    const hourDegrees = hour / 60 * 360 + 120;
+    const hourDegrees = hour / 12 * 360 + minutes / 60 * 30 + 90;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
     //removing flicking transition when reaching 90deg
